@@ -1,5 +1,5 @@
 // public/js/app.js
-angular.module('blogApp', [
+angular.module('sampleApp', [
     'ngRoute',
     'ngAnimate',
     'appRoutes',
