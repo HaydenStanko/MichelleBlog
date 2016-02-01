@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Title of Blog!</title>
+
+    <!-- For Angular Routing -->
+    <base href="/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" 
+          href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" 
+          href="assets/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" 
+          href="assets/css/style.min.css">
+
+    <!-- JS Packages -->
+    <script src="assets/libs/angular/angular.min.js"></script>
+    <script src="assets/libs/angular-route/angular-route.min.js"></script>
+    <script src="assets/libs/angular-animate/angular-animate.min.js"></script>
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="app/js/controllers/MainCtrl.js"></script>
+    <script src="app/js/controllers/SampleCtrl.js"></script>
+    <script src="app/js/services/SampleService.js"></script>
+    <script src="app/js/appRoutes.js"></script>
+    <script src="app/js/app.js"></script>
+   
 </head>
-<body>
-    <h1>Sup, bruh?</h1>
+<body ng-app="blogApp" ng-controller="MainController as main">
+    <h1>{{ main.message }}</h1>
 </body>
 </html>

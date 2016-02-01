@@ -1,8 +1,7 @@
 // public/js/app.js
-angular.module('sampleApp', [
+angular.module('blogApp', [
     'ngRoute',
+    'ngAnimate',
     'appRoutes',
-    'MainCtrl',
-    'SampleCtrl',
-    'SampleService'
+    'MainCtrl'
 ]);

@@ -14,10 +14,10 @@ var sass        = require('gulp-sass');
 var notify      = require('gulp-notify');
 // var livereload  = require('gulp-livereload');
 
-// TASK: compile Sass to CSS and minify
+// TASK: compile Scss to CSS and minify
 gulp.task('css', function() {
-    // grab sass file, process, save to style.css in assets
-    return gulp.src('public/assets/css/style.sass')
+    // grab sass file, process, save to style.min.css in assets
+    return gulp.src(['public/assets/css/*.scss'])
         .pipe(sass())
         .pipe(minifyCSS())
         .pipe(rename({ suffix: '.min' }))
@@ -37,7 +37,6 @@ gulp.task('api', function() {
     return gulp.src(['app/*.js', 'app/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
-        // .pipe(emit('restart'));
 });
 
 // TASK: lint, minify, concat frontend JS
@@ -83,7 +82,7 @@ gulp.task('nodemon', function() {
 // Watch and run tasks
 gulp.task('watch', function() {
     // watch sass file, and run css task
-    gulp.watch('public/assets/css/style.sass', ['css']);
+    gulp.watch('public/assets/css/*.scss', ['css']);
 
     // watch js files and rn lint and run js and angular tasks
     gulp.watch(['server.js', 'public/app/*.js', 'public/app/**/*.js'], ['js', 'angular']);
