@@ -8,6 +8,7 @@ var morgan      = require('morgan');        // used for logging requests
 var config      = require('./config');      // easy configuration
 var path        = require('path');          // track current directory
 var mongoose    = require('mongoose');
+var methodOverride = require('method-override');
 
 // App Configuration
 // ===========================================
@@ -29,18 +30,21 @@ app.use(morgan('dev'));
 // connect to database 
 // mongoose.connect(config.database);
 
+// override with X-HTTP-Method-Override header in req. simulate Delete/Put
+app.use(methodOverride('X-HTTP-Method-Override'));
+
 // set static file location
 // used for frontend requests
 app.use(express.static(__dirname + '/public'));
 
 // Routes for API
 // ===========================================
-var apiRoutes = require('.//app/routes/api')(app, express);
+var apiRoutes = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
 
-// Main Catchall Route --------
-// Send users to Frontend ----
-// has to be registered after api routes
+// Main Catchall Route ---------------
+// Send users to Frontend -----------
+// must be registered after api routes
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
@@ -49,4 +53,4 @@ app.get('*', function(req, res) {
 // ===========================================
 app.listen(config.port);
 console.log("Magic happens on port: " + config.port);
-// test
+

@@ -22,15 +22,24 @@
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Custom JS -->
+    <!-- Controllers -->
     <script src="app/js/controllers/MainCtrl.js"></script>
     <script src="app/js/controllers/SampleCtrl.js"></script>
+    <!-- Services -->
     <script src="app/js/services/SampleService.js"></script>
+    <!-- Main Angular app files -->
     <script src="app/js/appRoutes.js"></script>
     <script src="app/js/app.js"></script>
    
 </head>
 <body ng-app="blogApp" ng-controller="MainController as main">
-    <h1>{{ main.message }}</h1>
+    <h1>Test</h1>
+
+    <div id="view-container">
+        This is another test
+        <div id="view" class="container-fluid" ng-view>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 var config  = require('../../config');
 var express = require('express');
 
-module.exports = function(app, epxress) {
+module.exports = function(app, express) {
 
     var apiRouter = express.Router();
 
@@ -10,8 +10,7 @@ module.exports = function(app, epxress) {
     apiRouter.get('/', function(req, res) {
         res.json({ message: 'Welcome to our API!' });
     });
-
-    // return the router obj
+    
     return apiRouter;
 };
 // Testing

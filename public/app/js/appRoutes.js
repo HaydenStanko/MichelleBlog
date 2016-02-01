@@ -1,22 +1,22 @@
 // public/js/appRoutes.js
-angular.module('appRoutes', [])
+angular.module('appRoutes', ['ngRoute'])
 
-.config(['$routeProvider', '$locationProvider',
-       function($routeProvider, $locationProvider) {
+.config(function($routeProvider, $locationProvider) {
+
     $routeProvider
 
-    // home page
-    .when('/', {
-        templateUrl:    'views/home.html',
-        controller:     'MainController'
-    })
+        // home page
+        .when('/', {
+            templateUrl:    'app/views/pages/home.html'
+        })
 
-    // Samples page that wil use SampleController
-    .when('/samples', {
-        templateUrl:    'views/sample.html',
-        controller:     'SampleController'
-    });
+        // Samples page that wil use SampleController
+        .when('/samples', {
+            templateUrl:    'app/views/pages/sample.html',
+            controller:     'SampleController',
+            controllerAs:   'sample'
+        });
 
     $locationProvider.html5Mode(true);
-}]);
+});
 

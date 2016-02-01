@@ -6,5 +6,3 @@ angular.module('MainCtrl', [])
 
     vm.message = "This is the main message";
 });
-
-console.log("finished main");

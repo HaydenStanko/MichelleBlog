@@ -3,5 +3,7 @@ angular.module('blogApp', [
     'ngRoute',
     'ngAnimate',
     'appRoutes',
-    'MainCtrl'
+    'MainCtrl',
+    'SampleCtrl',
+    'SampleService'
 ]);
