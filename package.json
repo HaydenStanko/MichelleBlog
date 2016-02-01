@@ -9,10 +9,21 @@
   "author": "Hayden Stanko",
   "license": "ISC",
   "dependencies": {
-      "express": "4.5.1^",
-      "mongoose": "3.8.0^",
-      "body-parser": "1.4.2^",
-      "method-override": "2.0.2^"
+      "gulp":               "latest",
+      "gulp-minify-css":    "latest",
+      "gulp-rename":        "latest",
+      "gulp-jshint":        "latest",
+      "gulp-concat":        "latest",
+      "gulp-uglify":        "latest",
+      "gulp-ng-annotate":   "latest",
+      "gulp-nodemon":       "latest",
+      "gulp-sass":          "latest",
+      "gulp-notify":        "latest",
+      "express":            "latest",
+      "mongoose":           "latest",
+      "body-parser":        "latest",
+      "method-override":    "latest",
+      "morgan":             "latest"
   }
 
 }
